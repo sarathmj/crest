@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Home Section -->
+    <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 mx-auto">
+                    <h1 class="text-white text-center">Crest</h1>
+                    <h6 class="text-center">Inspiring Innovation !!!</h6>
+                    <form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text bi-search" id="basic-addon1"></span>
+                            <input name="keyword" type="search" class="form-control" id="keyword" placeholder="Search for inspiration..." aria-label="Search" value="{{ search_query }}">
+                            <button type="submit" class="form-control">Search</button>
+                        </div>
+                    </form>
+                    {% if search_message %}
+                        <p class="text-white text-center">{{ search_message }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="explore-section section-padding" id="section_2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="mb-4">About Us</h2>
+                </div>
+                <div class="col-lg-8 col-12 mx-auto">
+                    <p>Crest is a platform dedicated to inspiring innovation. Founded in 2025, we connect visionaries, creators, and problem-solvers to drive bold ideas and transformative solutions.</p>
+                    <p>Our mission is to empower you to push boundaries and turn inspiration into reality. Explore how we can help you innovate.</p>
+                    <img src="{% static 'images/topics/undraw_Remote_design_team_re_urdx.png' %}" class="img-fluid mt-4" alt="Crest Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-section section-padding section-bg" id="section_5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12 text-center">
+                    <h2 class="mb-5">Get in Touch</h2>
+                </div>
+                <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+                    <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d14682.787480485204!2d55.721244288423165!3d24.205724691281077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDEyJzIwLjciTiA1NcKwNDQnMjIuOSJF!5e0!3m2!1sen!2sae!4v1741466430835!5m2!1sen!2sae" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg-0 mb-md-0 ms-auto">
+                    <h4 class="mb-3">Crest Headquarters</h4>
+                    <p>585 Khalid Bin Sultan St, Al Mu'tarid, Al Ain, Abu Dhabi, UAE</p>
+                    <hr>
+                    <p class="d-flex align-items-center mb-1">
+                        <span class="me-2">Phone</span>
+                        <a href="tel: 415-555-1234" class="site-footer-link">415-555-1234</a>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="me-2">Email</span>
+                        <a href="mailto:info@crestinnovation.com" class="site-footer-link">info@crestinnovation.com</a>
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mx-auto">
+                    <form action="{% url 'contact' %}" method="post" class="custom-form contact-form" role="form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="">
+                                    <label for="floatingInput">Name</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-floating">
+                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="message" name="message" placeholder="Your Message"></textarea>
+                                    <label for="floatingTextarea">Your Message</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-12">
+                                <button type="submit" class="form-control">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

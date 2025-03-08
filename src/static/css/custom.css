@@ -1,0 +1,26 @@
+body {
+    background-color: #f8f9fa;
+}
+/* Branding Colors */
+.navbar-brand span {
+    color: #007bff; /* Blue for Crest */
+}
+.hero-section {
+    background: linear-gradient(to right, #007bff, #00c4cc); /* Gradient for Home */
+}
+.custom-btn {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.custom-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Section Adjustments */
+.section-padding {
+    padding: 5rem 0;
+}
+.section-bg {
+    background-color: #f8f9fa; /* Light gray background */
+}
