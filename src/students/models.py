@@ -14,3 +14,14 @@ class Contact(models.Model):
     class Meta:
         verbose_name = "Contact Submission"
         verbose_name_plural = "Contact Submissions"
+
+
+class ActivityLog(models.Model):
+    action = models.CharField(max_length=255)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    details = models.TextField(blank=True)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    session_key = models.CharField(max_length=40, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.action} at {self.timestamp}"
