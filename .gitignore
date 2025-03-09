@@ -4,8 +4,8 @@ __pycache__/
 *$py.class
 
 #django
-staticfiles/
-students/migrations/
+src/staticfiles/
+src/students/migrations/
 
 
 # C extensions
