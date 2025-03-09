@@ -11,6 +11,9 @@ src/students/migrations/
 # C extensions
 *.so
 
+# Logs
+src/logs/*.log
+
 # Distribution / packaging
 .Python
 build/
