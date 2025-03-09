@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_bootstrap5',  # Bootstrap integration
     'students', #app1
-    'accounts', #app2
+    'accounts' #app2
 ]
 
 MIDDLEWARE = [
@@ -175,3 +175,5 @@ LOGGING = {
         },
     },
 }
+
+AUTH_USER_MODEL = 'accounts.User'
